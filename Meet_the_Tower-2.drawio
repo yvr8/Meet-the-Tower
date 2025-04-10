@@ -1,0 +1,106 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.3.1 Safari/605.1.15" version="26.2.10">
+  <diagram name="Page-1" id="lQxP0xsn9dwh4Z7V78RF">
+    <mxGraphModel dx="2068" dy="1192" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="nghysB6f6jKF5T_F9axY-2" value="Joueur" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="10" y="20" width="330" height="310" as="geometry" />
+        </mxCell>
+        <mxCell id="nghysB6f6jKF5T_F9axY-3" value="Je veux atteindre la fin du niveau" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="nghysB6f6jKF5T_F9axY-2">
+          <mxGeometry x="10" y="30" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nghysB6f6jKF5T_F9axY-6" value="Je dois coopérer avec l&#39;autre joueur" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="nghysB6f6jKF5T_F9axY-2">
+          <mxGeometry x="10" y="100" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nghysB6f6jKF5T_F9axY-7" value="Récupérer les pièces" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="nghysB6f6jKF5T_F9axY-2">
+          <mxGeometry x="10" y="170" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nghysB6f6jKF5T_F9axY-8" value="Ne pas mourir en évitant les pièges" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="nghysB6f6jKF5T_F9axY-2">
+          <mxGeometry x="10" y="240" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nghysB6f6jKF5T_F9axY-9" value="Règle" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="20" width="330" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="nghysB6f6jKF5T_F9axY-10" value="Si un joueur meurt le niveau est perdu" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="nghysB6f6jKF5T_F9axY-9">
+          <mxGeometry x="10" y="30" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nghysB6f6jKF5T_F9axY-11" value="Le niveau est gagné quand le boss est vaincu" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="nghysB6f6jKF5T_F9axY-9">
+          <mxGeometry x="10" y="100" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nghysB6f6jKF5T_F9axY-14" value="Piège" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="10" y="630" width="330" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="nghysB6f6jKF5T_F9axY-15" value="Si le joueur me touche il meurt" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="nghysB6f6jKF5T_F9axY-14">
+          <mxGeometry x="10" y="30" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nghysB6f6jKF5T_F9axY-16" value="Je suis static ou j&#39;ai des mouvements répéter" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="nghysB6f6jKF5T_F9axY-14">
+          <mxGeometry x="10" y="100" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nghysB6f6jKF5T_F9axY-17" value="Boss" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="380" width="330" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="nghysB6f6jKF5T_F9axY-18" value="Je fais apparaître et je contrôle des pièges" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="nghysB6f6jKF5T_F9axY-17">
+          <mxGeometry x="10" y="30" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nghysB6f6jKF5T_F9axY-19" value="Je suis vaincu quand les joueurs atteigne un objectif" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="nghysB6f6jKF5T_F9axY-17">
+          <mxGeometry x="10" y="100" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nghysB6f6jKF5T_F9axY-20" value="Pièces" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="200" width="330" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="nghysB6f6jKF5T_F9axY-21" value="Je suis un objectif secondaire, me récupérer est un objectif secondaire" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="nghysB6f6jKF5T_F9axY-20">
+          <mxGeometry x="10" y="30" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nghysB6f6jKF5T_F9axY-22" value="J&#39;attend sur place que le joueur me récupère" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="nghysB6f6jKF5T_F9axY-20">
+          <mxGeometry x="10" y="100" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nghysB6f6jKF5T_F9axY-23" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="340" y="710" as="sourcePoint" />
+            <mxPoint x="460" y="710" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="380" y="710" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nghysB6f6jKF5T_F9axY-24" value="Pic Vertical" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="660" width="330" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="nghysB6f6jKF5T_F9axY-25" value="J&#39;ai une seule action possible, me déployer puis me rétracter" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="nghysB6f6jKF5T_F9axY-24">
+          <mxGeometry x="10" y="30" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nghysB6f6jKF5T_F9axY-27" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="nghysB6f6jKF5T_F9axY-14">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="150" y="800" as="sourcePoint" />
+            <mxPoint x="460" y="830" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="270" y="830" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nghysB6f6jKF5T_F9axY-28" value="Pic Statique" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="770" width="330" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="nghysB6f6jKF5T_F9axY-29" value="Je bouge pas" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="nghysB6f6jKF5T_F9axY-28">
+          <mxGeometry x="10" y="30" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nghysB6f6jKF5T_F9axY-30" value="Lance flamme" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="880" width="330" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="nghysB6f6jKF5T_F9axY-31" value="Ma seule action est de lancer des flammes" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="nghysB6f6jKF5T_F9axY-30">
+          <mxGeometry x="10" y="30" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nghysB6f6jKF5T_F9axY-32" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="nghysB6f6jKF5T_F9axY-30">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="230" y="800" as="sourcePoint" />
+            <mxPoint x="470" y="840" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="240" y="840" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
