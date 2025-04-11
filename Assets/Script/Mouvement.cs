@@ -23,7 +23,7 @@ public class Mouvement : MonoBehaviour
 
     void Sauter()
     {
-        Debug.Log("sauter");
+        transform.Translate(Vector2.up * 3);
     }
     void Deplacer(Vector2 newDirection)
     {
