@@ -14,17 +14,23 @@ public class UI : MonoBehaviour
     public Button btnQuitter;
     [Header("Menu Parametre")]
     public GameObject MenuParametre;
+    public Button btnRetourParametre;
     [Header("Menu Choisir Niveau")]
     public GameObject MenuChoisirNiveau;
+    public Button btnRetour;
     public TMP_Dropdown dropdownChoisirNiveau;
 
     void Start()
     {
+        //Menu de base
         btnJouer.onClick.AddListener(btnJouer_onClick);
         btnParametre.onClick.AddListener(btnParametre_onClick);
         btnQuitter.onClick.AddListener(btnQuitter_onClick);
-
+        //Choix niveau
+        btnRetour.onClick.AddListener(btnRetour_onClick);
         dropdownChoisirNiveau.onValueChanged.AddListener(dropdownChoisirNiveauChange);
+        //Menu Parametre
+        btnRetourParametre.onClick.AddListener(btnRetourParametre_onClick);
         
         MenuParametre.SetActive(false);
         MenuChoisirNiveau.SetActive(false);
@@ -33,7 +39,16 @@ public class UI : MonoBehaviour
     {
         MenuChoisirNiveau.SetActive(true);
         Menu.SetActive(false);
-        Debug.Log("Jouer!");
+    }
+    void btnRetour_onClick()
+    {
+        MenuChoisirNiveau.SetActive(false);
+        Menu.SetActive(true);
+    }
+    void btnRetourParametre_onClick()
+    {
+        MenuParametre.SetActive(false);
+        Menu.SetActive(true);
     }
     void btnParametre_onClick()
     {
@@ -43,7 +58,8 @@ public class UI : MonoBehaviour
     }
     void btnQuitter_onClick()
     {
-        Debug.Log("Bye!");
+        Debug.Log("Quitter!");
+        Application.Quit();
     }
     void dropdownChoisirNiveauChange(int index)
     {
