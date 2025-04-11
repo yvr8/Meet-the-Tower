@@ -165,7 +165,7 @@
                 {
                     "name": "",
                     "id": "7004d0c3-9946-4edb-93f0-de60602c0e5b",
-                    "path": "<Keyboard>/s",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard Left",
@@ -176,7 +176,7 @@
                 {
                     "name": "",
                     "id": "5fc4f2e0-68b9-4a46-a716-6e944f84bd37",
-                    "path": "<Keyboard>/k",
+                    "path": "<Keyboard>/rightShift",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard Right",
