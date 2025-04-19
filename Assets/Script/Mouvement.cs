@@ -8,7 +8,6 @@ public class Mouvement : MonoBehaviour
     private Rigidbody2D _rigidbody;
     private Collider2D _collider2D;
     private List<ContactPoint2D> _contacts;
-    public GameObject camera;
     // Variable modifiable pour changer le comportement du personnage
     public float MagnitudeSaut;
     public float VitesseDeplacement;
@@ -21,7 +20,6 @@ public class Mouvement : MonoBehaviour
         _collider2D = GetComponent<Collider2D>();
         _rigidbody = GetComponent<Rigidbody2D>();
         _inputReader = GetComponent<PlayerInputReader>();
-        camera = GameObject.FindWithTag("MainCamera");
         
         // S'abonner à l'événement sauter
         _inputReader.BS.callback += Sauter;
@@ -48,7 +46,7 @@ public class Mouvement : MonoBehaviour
         {
             float angleVersBas = Vector2.Angle(contact.normal, Vector2.up);
             
-            if (angleVersBas < 60f)
+            if (angleVersBas < 15f)
             {
                 _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, 0);
                 _rigidbody.AddForce(Vector2.up * MagnitudeSaut, ForceMode2D.Impulse);
