@@ -1135,6 +1135,69 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Brick Tileset_47
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abd4e690d55bfa2ec99662668d66055d
+      internalID: 466303787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brick Tileset_48
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 552e82ea09fa2b133ba4d846c568db23
+      internalID: -686083782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Brick Tileset_49
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 410fe6bd6ca040f778f02d17748e38fa
+      internalID: -320429442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1188,6 +1251,9 @@ TextureImporter:
       Brick Tileset_44: 1501048787
       Brick Tileset_45: -880980176
       Brick Tileset_46: 2028167494
+      Brick Tileset_47: 466303787
+      Brick Tileset_48: -686083782
+      Brick Tileset_49: -320429442
       Brick Tileset_5: -2053829267
       Brick Tileset_6: -1958480144
       Brick Tileset_7: 731558187
