@@ -62,9 +62,10 @@ public class Mouvement : MonoBehaviour
     }
     
     // Quand le joueur subit des degats, il est ejecte, font l'animation de mort et les joueurs retourner au checkpoint precedents.
-    void SubirDegats(Vector2 newDirection)
+    public void SubirDegats(Vector2 directionEjectionVector2)
     {
-        _rigidbody.AddForce(newDirection , ForceMode2D.Impulse);
+        _rigidbody.AddForce(directionEjectionVector2);
+        Debug.Log("Recommencer la partie");
     }
     
 }

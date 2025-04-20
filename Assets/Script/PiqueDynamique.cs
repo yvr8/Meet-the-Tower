@@ -5,27 +5,35 @@ using UnityEngine;
 public class PiqueDynamique : PiqueStatique
 {
     private SpriteRenderer _spriteRenderer;
-    public bool _activated;
+    private Animator _animator;
+    private bool _activated;
+    private float _t;
+    // a changer dans unity afin d'avoir le resultat souaite.
     public float distance;
     public float temps;
-    private float _t;
-    // Start is called before the first frame update
     void Start()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _animator = GetComponent<Animator>();
         _collider =  GetComponent<Collider2D>();
+        InvokeRepeating("Activate", 0, 5);
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         Animer();
     }
 
-    void Activate()
+    public void Activate()
     {
-        new WaitForSecondsRealtime(1);
-        
+        StartCoroutine(Coroutine());
+    }
+    
+    // Activer le debut de l'animation et deplacement du pique dynamique.
+    IEnumerator Coroutine()
+    {
+        _animator.SetTrigger("Activate");
+        yield return new WaitForSeconds(1);
         _activated =  true;
     }
 
