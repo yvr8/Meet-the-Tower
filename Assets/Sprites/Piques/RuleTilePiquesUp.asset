@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
   m_Name: RuleTilePiquesUp
   m_EditorClassIdentifier: 
-  m_DefaultSprite: {fileID: 1089619501, guid: 513abfa5f407faa0f9cdd05f01d406c4, type: 3}
+  m_DefaultSprite: {fileID: 549717179, guid: 513abfa5f407faa0f9cdd05f01d406c4, type: 3}
   m_DefaultGameObject: {fileID: 0}
   m_DefaultColliderType: 1
   m_TilingRules:
   - m_Id: 1
     m_Sprites:
-    - {fileID: -943087160, guid: 513abfa5f407faa0f9cdd05f01d406c4, type: 3}
+    - {fileID: -583997179, guid: 513abfa5f407faa0f9cdd05f01d406c4, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
@@ -30,10 +30,10 @@ MonoBehaviour:
     m_NeighborPositions:
     - {x: 1, y: 0, z: 0}
     - {x: -1, y: 0, z: 0}
-    m_RuleTransform: 1
+    m_RuleTransform: 0
   - m_Id: 2
     m_Sprites:
-    - {fileID: -1686289149, guid: 513abfa5f407faa0f9cdd05f01d406c4, type: 3}
+    - {fileID: 2632829, guid: 513abfa5f407faa0f9cdd05f01d406c4, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
@@ -45,10 +45,10 @@ MonoBehaviour:
     m_NeighborPositions:
     - {x: -1, y: 0, z: 0}
     - {x: 1, y: 0, z: 0}
-    m_RuleTransform: 1
+    m_RuleTransform: 0
   - m_Id: 3
     m_Sprites:
-    - {fileID: 756531636, guid: 513abfa5f407faa0f9cdd05f01d406c4, type: 3}
+    - {fileID: 1553730183, guid: 513abfa5f407faa0f9cdd05f01d406c4, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
@@ -60,4 +60,4 @@ MonoBehaviour:
     m_NeighborPositions:
     - {x: -1, y: 0, z: 0}
     - {x: 1, y: 0, z: 0}
-    m_RuleTransform: 3
+    m_RuleTransform: 0

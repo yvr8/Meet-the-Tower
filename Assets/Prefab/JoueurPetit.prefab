@@ -102,7 +102,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a728b7a80351e49cfa6fb0d5f18d6540, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 0}
   MagnitudeSaut: 15.4
   VitesseDeplacement: 8
 --- !u!114 &2558686085444898519
