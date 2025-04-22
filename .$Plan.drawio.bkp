@@ -79,9 +79,6 @@
             <mxPoint x="469" y="640" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="680tjitxDSJHZ57YT6MC-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="680tjitxDSJHZ57YT6MC-3" target="nghysB6f6jKF5T_F9axY-19">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
         <mxCell id="680tjitxDSJHZ57YT6MC-3" value="Porte de sortie" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="40" y="470" width="330" height="100" as="geometry" />
         </mxCell>

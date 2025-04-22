@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -69,7 +70,7 @@ public class Mouvement : MonoBehaviour
         Debug.Log("Recommencer la partie");
         FinirNiveau(); // Fonction pour sauvegarder 
     }
-    public void FinirNiveau()
+    private void FinirNiveau()
     {
         Debug.Log("FinirNiveau");
         string nomNiveau = SceneManager.GetActiveScene().name;
@@ -80,12 +81,12 @@ public class Mouvement : MonoBehaviour
             false,
             22f
         );
-        RelancerLaScene(); // Relancer la scene (fonction au cas ou on ajoute autre chose)
+        StartCoroutine(RelancerLaScene()); // Relancer la scene (fonction au cas ou on ajoute autre chose)
     }
 
-    public void RelancerLaScene()
+    private IEnumerator RelancerLaScene()
     {
+        yield return new WaitForSeconds(2f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-
 }
