@@ -18,7 +18,10 @@ public class UI : MonoBehaviour
     [Header("Menu Choisir Niveau")]
     public GameObject MenuChoisirNiveau;
     public Button btnRetour;
-    public TMP_Dropdown dropdownChoisirNiveau;
+    public Button btnNiveau1;
+    public Button btnNiveau2;
+    public Button btnNiveau3;
+    public Button btnNiveau4;
 
     void Start()
     {
@@ -28,12 +31,15 @@ public class UI : MonoBehaviour
         btnQuitter.onClick.AddListener(btnQuitter_onClick);
         //Choix niveau
         btnRetour.onClick.AddListener(btnRetour_onClick);
-        dropdownChoisirNiveau.onValueChanged.AddListener(dropdownChoisirNiveauChange);
         //Menu Parametre
         btnRetourParametre.onClick.AddListener(btnRetourParametre_onClick);
         
         MenuParametre.SetActive(false);
         MenuChoisirNiveau.SetActive(false);
+        btnNiveau1.onClick.AddListener(btnNiveau1_onClick);
+        btnNiveau2.onClick.AddListener(btnNiveau2_onClick);
+        btnNiveau3.onClick.AddListener(btnNiveau3_onClick);
+        btnNiveau4.onClick.AddListener(btnNiveau4_onClick);
     }
     void btnJouer_onClick()
     {
@@ -61,19 +67,21 @@ public class UI : MonoBehaviour
         Debug.Log("Quitter!");
         Application.Quit();
     }
-    void dropdownChoisirNiveauChange(int index)
-    {
-        var niveau = dropdownChoisirNiveau.options[index].text;
-        Debug.Log(niveau);
-        if (niveau == "Choisir Niveau")
-        {
-            return;
-        }
-        else
-        {
-            Debug.Log(niveau);
-            SceneManager.LoadScene(sceneName:niveau);
-        }
-    }
 
+    void btnNiveau1_onClick()
+    {
+        SceneManager.LoadScene(sceneName:"Niveau1");
+    }
+    void btnNiveau2_onClick()
+    {
+        SceneManager.LoadScene(sceneName:"Niveau2");
+    }
+    void btnNiveau3_onClick()
+    {
+        SceneManager.LoadScene(sceneName:"Niveau3");
+    }
+    void btnNiveau4_onClick()
+    {
+        SceneManager.LoadScene(sceneName:"Niveau4");
+    }
 }

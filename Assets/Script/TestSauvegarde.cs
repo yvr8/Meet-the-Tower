@@ -15,16 +15,16 @@ public class TestSauvegarde : MonoBehaviour
         {
             texteAffichage.text =
                 "Niveau 1\n" +
-                "Terminé : " + (data.niveauTermine) + "\n" +
-                "Toutes les pièces : " + (data.toutesPiecesRecuperees) + "\n" +
-                "Temps utilisé : " + data.tempsUtilise.ToString("F2") + " sec";
+                "Termine : " + (data.niveauTermine) + "\n" +
+                "Toutes les pieces : " + (data.toutesPiecesRecuperees) + "\n" +
+                "Temps utilise : " + data.tempsUtilise.ToString("F2") + " sec";
         }
         else
         {
-            texteAffichage.text = "Aucune donnée pour Niveau 1";
+            texteAffichage.text = "Aucune donnee pour le Niveau 1";
         }
 
-        Debug.Log("Données niveau 1 : " + (data != null ? JsonUtility.ToJson(data) : "null"));
+        Debug.Log("Donnees niveau 1 : " + (data != null ? JsonUtility.ToJson(data) : "null"));
     }
 
 }
