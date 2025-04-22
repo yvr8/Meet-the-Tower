@@ -27,10 +27,30 @@ public class AfficherEtoile : MonoBehaviour
         var dataNiveau1 = SystemeSauvegarde.Instance.GetNiveau("Niveau1");
         if (dataNiveau1 != null)
         {
-            if (dataNiveau1.niveauTermine) {N1Etoile1.color = new Color(1, 200, 200, 1);}
-            if (dataNiveau1.toutesPiecesRecuperees) {N1Etoile2.color = new Color(1, 200, 200, 1);}
-            if (dataNiveau1.tempsUtilise<=60) {N1Etoile3.color = new Color(1, 200, 200, 1);}
+            if (dataNiveau1.niveauTermine) {N1Etoile1.color = new Color(1, 1, 1, 1);}
+            if (dataNiveau1.toutesPiecesRecuperees) {N1Etoile2.color = new Color(1, 1, 1, 1);}
+            if (dataNiveau1.tempsUtilise<=60) {N1Etoile3.color = new Color(1, 1, 1, 1);}
         }
-        
+        var dataNiveau2 = SystemeSauvegarde.Instance.GetNiveau("Niveau2");
+        if (dataNiveau2 != null)
+        {
+            if (dataNiveau2.niveauTermine) {N1Etoile1.color = new Color(1, 1, 1, 1);}
+            if (dataNiveau2.toutesPiecesRecuperees) {N1Etoile2.color = new Color(1, 1, 1, 1);}
+            if (dataNiveau2.tempsUtilise<=60) {N1Etoile3.color = new Color(1, 1, 1, 1);}
+        }
+        var dataNiveau3 = SystemeSauvegarde.Instance.GetNiveau("Niveau3");
+        if (dataNiveau3 != null)
+        {
+            if (dataNiveau3.niveauTermine) {N1Etoile1.color = new Color(1, 1, 1, 1);}
+            if (dataNiveau3.toutesPiecesRecuperees) {N1Etoile2.color = new Color(1, 1, 1, 1);}
+            if (dataNiveau3.tempsUtilise<=60) {N1Etoile3.color = new Color(1, 1, 1, 1);}
+        }
+        var dataNiveau4 = SystemeSauvegarde.Instance.GetNiveau("Niveau4");
+        if (dataNiveau4 != null)
+        {
+            if (dataNiveau4.niveauTermine) {N1Etoile1.color = new Color(1, 1, 1, 1);}
+            if (dataNiveau4.toutesPiecesRecuperees) {N1Etoile2.color = new Color(1, 1, 1, 1);}
+            if (dataNiveau4.tempsUtilise<=60) {N1Etoile3.color = new Color(1, 1, 1, 1);}
+        }
     }
 }
