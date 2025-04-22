@@ -16,7 +16,6 @@ public class PiqueDynamique : PiqueStatique
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _animator = GetComponent<Animator>();
         _collider =  GetComponent<Collider2D>();
-        InvokeRepeating("Activate", 0, 5);
     }
     
     void Update()

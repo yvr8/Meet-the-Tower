@@ -22,14 +22,15 @@ public class DeplacementCamera : MonoBehaviour
     }
 
     void DeplacerCamera()
-    {
-        Vector3 pos = new Vector2();
-        foreach (GameObject joueur in _joueurs)
-        {
-            pos += joueur.transform.position;
-        }
-        pos /= _joueurs.Length;
-        
-        transform.position = Vector2.SmoothDamp(transform.position, pos, ref _vector0, ammortissement );
-    }
-}
+    {      Vector3 pos = new Vector2();
+             foreach (GameObject joueur in _joueurs)
+             {
+                 pos += joueur.transform.position;
+             }
+             pos /= _joueurs.Length;
+             
+             transform.position = Vector2.SmoothDamp(transform.position, pos, ref _vector0, ammortissement );
+         }
+     }
+
+  

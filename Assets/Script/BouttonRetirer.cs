@@ -8,7 +8,6 @@ public class BouttonRetirer : MonoBehaviour
     public List<GameObject> objects;
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("patate");
         foreach (GameObject obj in objects)
         {
             Debug.Log("Disabling: " + obj.name);

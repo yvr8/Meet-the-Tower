@@ -1,0 +1,100 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.2.2 Chrome/134.0.6998.178 Electron/35.1.2 Safari/537.36" version="26.2.2">
+  <diagram name="Page-1" id="lQxP0xsn9dwh4Z7V78RF">
+    <mxGraphModel dx="1154" dy="726" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="nghysB6f6jKF5T_F9axY-2" value="Joueur" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="39" y="40" width="330" height="310" as="geometry" />
+        </mxCell>
+        <mxCell id="nghysB6f6jKF5T_F9axY-3" value="Je veux atteindre la fin du niveau" style="rounded=0;whiteSpace=wrap;html=1;" parent="nghysB6f6jKF5T_F9axY-2" vertex="1">
+          <mxGeometry x="10" y="30" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nghysB6f6jKF5T_F9axY-6" value="Je dois coopérer avec l&#39;autre joueur afin d&#39;avancer dans le niveau" style="rounded=0;whiteSpace=wrap;html=1;" parent="nghysB6f6jKF5T_F9axY-2" vertex="1">
+          <mxGeometry x="10" y="100" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nghysB6f6jKF5T_F9axY-7" value="Je peux récupérer 3 étoiles dans les niveaux afin d&#39;avoir un meilleur score à la fin pour augmenter l&#39;égo des joueurs plus compétitifs" style="rounded=0;whiteSpace=wrap;html=1;" parent="nghysB6f6jKF5T_F9axY-2" vertex="1">
+          <mxGeometry x="10" y="170" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nghysB6f6jKF5T_F9axY-8" value="Je fait perdre la partie si je subis des dégats et fait recommencer au du niveau" style="rounded=0;whiteSpace=wrap;html=1;" parent="nghysB6f6jKF5T_F9axY-2" vertex="1">
+          <mxGeometry x="10" y="240" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nghysB6f6jKF5T_F9axY-9" value="Règle" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="450" y="40" width="330" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="nghysB6f6jKF5T_F9axY-10" value="Si un joueur meurt le niveau est perdu et on recommence" style="rounded=0;whiteSpace=wrap;html=1;" parent="nghysB6f6jKF5T_F9axY-9" vertex="1">
+          <mxGeometry x="10" y="30" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nghysB6f6jKF5T_F9axY-11" value="Le niveau est gagné quand le boss est vaincu" style="rounded=0;whiteSpace=wrap;html=1;" parent="nghysB6f6jKF5T_F9axY-9" vertex="1">
+          <mxGeometry x="10" y="100" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nghysB6f6jKF5T_F9axY-14" value="Piège" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="40" y="580" width="330" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="nghysB6f6jKF5T_F9axY-15" value="Si le joueur me touche il meurt" style="rounded=0;whiteSpace=wrap;html=1;" parent="nghysB6f6jKF5T_F9axY-14" vertex="1">
+          <mxGeometry x="10" y="30" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nghysB6f6jKF5T_F9axY-16" value="Je suis static ou j&#39;ai des mouvements prévisible" style="rounded=0;whiteSpace=wrap;html=1;" parent="nghysB6f6jKF5T_F9axY-14" vertex="1">
+          <mxGeometry x="10" y="100" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nghysB6f6jKF5T_F9axY-17" value="Boss" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="450" y="400" width="330" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="nghysB6f6jKF5T_F9axY-18" value="Je suis la pièce avants la fin du niveau" style="rounded=0;whiteSpace=wrap;html=1;" parent="nghysB6f6jKF5T_F9axY-17" vertex="1">
+          <mxGeometry x="10" y="30" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nghysB6f6jKF5T_F9axY-19" value="Je suis vaincu quand les joueurs on survécu un certain nombre de temps&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" parent="nghysB6f6jKF5T_F9axY-17" vertex="1">
+          <mxGeometry x="10" y="100" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nghysB6f6jKF5T_F9axY-20" value="Pièces" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="450" y="220" width="330" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="nghysB6f6jKF5T_F9axY-21" value="Je suis un objectif secondaire, me récupérer est un objectif secondaire" style="rounded=0;whiteSpace=wrap;html=1;" parent="nghysB6f6jKF5T_F9axY-20" vertex="1">
+          <mxGeometry x="10" y="30" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nghysB6f6jKF5T_F9axY-22" value="J&#39;attend sur place que le joueur me récupère et je suis affiché à la fin du niveau et dans la selection des niveau." style="rounded=0;whiteSpace=wrap;html=1;" parent="nghysB6f6jKF5T_F9axY-20" vertex="1">
+          <mxGeometry x="10" y="100" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nghysB6f6jKF5T_F9axY-23" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" edge="1" target="nghysB6f6jKF5T_F9axY-24" source="nghysB6f6jKF5T_F9axY-14">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="339" y="630" as="sourcePoint" />
+            <mxPoint x="450" y="640" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nghysB6f6jKF5T_F9axY-24" value="Pic Vertical" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="450" y="580" width="330" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="nghysB6f6jKF5T_F9axY-25" value="J&#39;ai une seule action possible, me déployer puis me rétracter selon un script qui me controle" style="rounded=0;whiteSpace=wrap;html=1;" parent="nghysB6f6jKF5T_F9axY-24" vertex="1">
+          <mxGeometry x="10" y="30" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nghysB6f6jKF5T_F9axY-28" value="Pic Statique" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="450" y="690" width="330" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="nghysB6f6jKF5T_F9axY-29" value="Je bouge pas" style="rounded=0;whiteSpace=wrap;html=1;" parent="nghysB6f6jKF5T_F9axY-28" vertex="1">
+          <mxGeometry x="10" y="30" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="680tjitxDSJHZ57YT6MC-1" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.75;exitDx=0;exitDy=0;" edge="1" parent="1" source="nghysB6f6jKF5T_F9axY-14" target="nghysB6f6jKF5T_F9axY-28">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="349" y="750" as="sourcePoint" />
+            <mxPoint x="469" y="640" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="680tjitxDSJHZ57YT6MC-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="680tjitxDSJHZ57YT6MC-3" target="nghysB6f6jKF5T_F9axY-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="680tjitxDSJHZ57YT6MC-3" value="Porte de sortie" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="470" width="330" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="680tjitxDSJHZ57YT6MC-4" value="Quand les deux joueurs sont présents, je fait gagner la partie et débloque le prochain niveau" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="680tjitxDSJHZ57YT6MC-3">
+          <mxGeometry x="10" y="30" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="680tjitxDSJHZ57YT6MC-5" value="Gestionnaire de son" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="39" y="360" width="330" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="680tjitxDSJHZ57YT6MC-6" value="Quand les deux joueurs sont présents, je fait gagner la partie et débloque le prochain niveau" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="680tjitxDSJHZ57YT6MC-5">
+          <mxGeometry x="10" y="30" width="310" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
