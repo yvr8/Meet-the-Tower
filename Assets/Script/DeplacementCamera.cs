@@ -7,7 +7,7 @@ public class DeplacementCamera : MonoBehaviour
 {
     public float ammortissement;
     private Vector2 _vector0;
-    GameObject[] _joueurs;
+    private GameObject[] _joueurs;
     // Start is called before the first frame update
     void Start()
     {
