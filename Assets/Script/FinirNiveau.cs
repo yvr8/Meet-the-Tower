@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
+// Ce code est le test lié au bouton, il est amené a disparaitre (la porte vas faire sa)
 public class FinNiveauBouton : MonoBehaviour
 {
     public bool toutesPiecesRecuperees = true;
