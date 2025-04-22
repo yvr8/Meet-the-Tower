@@ -11,7 +11,7 @@ public class ControllerPiques : MonoBehaviour
     {
         _listePique = GetComponentsInChildren<PiqueStatique>();
         
-        InvokeRepeating();
+        //InvokeRepeating();
     }
 
     // Update is called once per frame

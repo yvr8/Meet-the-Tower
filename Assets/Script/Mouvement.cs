@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Mouvement : MonoBehaviour
 {
@@ -66,6 +67,25 @@ public class Mouvement : MonoBehaviour
     {
         _rigidbody.AddForce(directionEjectionVector2);
         Debug.Log("Recommencer la partie");
+        FinirNiveau(); // Fonction pour sauvegarder 
     }
-    
+    public void FinirNiveau()
+    {
+        Debug.Log("FinirNiveau");
+        string nomNiveau = SceneManager.GetActiveScene().name;
+
+        SystemeSauvegarde.Instance.MettreAJourNiveau(
+            nomNiveau,
+            true,
+            false,
+            22f
+        );
+        RelancerLaScene(); // Relancer la scene (fonction au cas ou on ajoute autre chose)
+    }
+
+    public void RelancerLaScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
 }
