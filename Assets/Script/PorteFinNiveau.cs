@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class PorteFinNiveau : MonoBehaviour
 {
     public int joueursRequis = 2;
-    private int joueursPrésents = 0;
+    private int joueursPresents = 0;
     private bool niveauTermine = false;
     private ChronoManager chronoManager;
     public string tagEtoile = "Etoile";
@@ -61,7 +61,7 @@ public class PorteFinNiveau : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            joueursPrésents++;
+            joueursPresents++;
             VerifierFin();
         }
     }
@@ -70,13 +70,13 @@ public class PorteFinNiveau : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            joueursPrésents--;
+            joueursPresents--;
         }
     }
 
     void VerifierFin()
     {
-        if (!niveauTermine && joueursPrésents >= joueursRequis)
+        if (!niveauTermine && joueursPresents >= joueursRequis)
         {
             niveauTermine = true;
             FinirNiveau();
