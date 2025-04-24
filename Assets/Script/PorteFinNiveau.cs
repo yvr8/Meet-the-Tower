@@ -14,6 +14,7 @@ public class PorteFinNiveau : MonoBehaviour
         chronoManager = FindObjectOfType<ChronoManager>();
         if (chronoManager == null)
         {
+            return;
         }
     }
 

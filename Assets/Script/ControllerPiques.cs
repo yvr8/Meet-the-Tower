@@ -10,15 +10,17 @@ using UnityEngine.UIElements;
 
 public class ControllerPiques : MonoBehaviour
 {   
-    public PiqueDynamique[] listePique;
+    // Temps avant de démmarer l'animation  
     public float waitBeforeStart = 2f;
+    // Temps entre les animations
     public float repeatRate = 10f;
+    // Delay entre l'activation de chaque pique dans l'animation de vague / vitesse de déplacement de la vague
     public float delayVague = 0.5f;
+    // Liste de la sequance d'animation
     public enumStatePique[] statePique;
-
-    //index pour la suite d'animation fait par les piques
+    // Index pour la suite d'animation fait par les piques
     private int index;
-    //enum pour les state d'animation.
+    // Enum pour les states de l'animation utilisable dans l'inspecteur d'Unity.
     public enum enumStatePique
     {
         All,
@@ -29,15 +31,27 @@ public class ControllerPiques : MonoBehaviour
         Split22,
         Split33,
         Split44,
+        Split11Reverse,
+        Split22Reverse,
+        Split33Reverse,
+        Split44Reverse,
     } 
+    // Liste des piques généré automatiquement quand ils sont mis dans un gameobject.
+    private PiqueDynamique[] listePique;
     
-    // Start is called before the first frame update
+    /// <summary>
+    /// Initialise la liste des piques enfants et commence l'exécution répétée du contrôleur d'état après un délai défini.
+    /// </summary>
     void Start()    
     {
         listePique = GetComponentsInChildren<PiqueDynamique>();
         InvokeRepeating("StateController", waitBeforeStart, repeatRate);
     }
 
+    /// <summary>
+    /// Contrôle la séquence des animations des piques en fonction de l'état défini dans le tableau statePique.
+    /// Réinitialise l'index si la fin de la liste est atteinte.
+    /// </summary>
     void StateController()
     {
         if (index >= statePique.Length)
@@ -71,10 +85,25 @@ public class ControllerPiques : MonoBehaviour
             case enumStatePique.Split44:
                 Split(4, 4, false);
                 break;
+            case enumStatePique.Split11Reverse:
+                Split(1, 1, true);
+                break;
+            case enumStatePique.Split22Reverse:
+                Split(2, 2, true);
+                break;
+            case enumStatePique.Split33Reverse:
+                Split(3, 3, true);
+                break;
+            case enumStatePique.Split44Reverse:
+                Split(4, 4, true);
+                break;
         }
         index++;
     }
 
+    /// <summary>
+    /// Active tous les piques de la liste simultanément.
+    /// </summary>
     private void All()
     {
         foreach (PiqueDynamique pique in listePique)
@@ -83,6 +112,10 @@ public class ControllerPiques : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Active uniquement les piques du côté droit ou gauche selon le paramètre reverse.
+    /// </summary>
+    /// <param name="reverse">Si vrai, active le côté gauche ; sinon, active le côté droit.</param>
     private void Side(bool reverse)
     {
         int centre = listePique.Length / 2;
@@ -101,6 +134,11 @@ public class ControllerPiques : MonoBehaviour
             }
         }
     }
+    
+    /// <summary>
+    /// Active les piques un par un en suivant une séquence avec un délai entre chaque activation.
+    /// </summary>
+    /// <returns>Coroutine IEnumerator pour permettre le délai entre les activations.</returns>
     private IEnumerator Vague()
     {
         foreach (PiqueDynamique pique in listePique)
@@ -111,12 +149,11 @@ public class ControllerPiques : MonoBehaviour
     }
 
     /// <summary>
-    /// 
+    /// Active les piques en alternant des groupes définis par groupSize1 et groupSize2. L'ordre peut être inversé.
     /// </summary>
-    /// <param name="groupeSize1">Nombre de pique dans le premier regroupement</param>
-    /// <param name="groupeSize2">Nombre de pique dans le deuxieme regroupement</param>
-    /// <param name="reverse">Inverse le groupe des piques qui sont active</param>
-    /// <returns></returns>
+    /// <param name="groupSize1">Nombre de piques dans le premier groupe.</param>
+    /// <param name="groupSize2">Nombre de piques dans le deuxième groupe.</param>
+    /// <param name="reverse">Si vrai, active le groupe 1 au lieu du groupe 2.</param>
     private void Split(int groupSize1, int groupSize2, bool reverse)
     {
         int longeurCycle = groupSize1 + groupSize2;

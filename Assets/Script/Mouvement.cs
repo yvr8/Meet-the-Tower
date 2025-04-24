@@ -16,6 +16,10 @@ public class Mouvement : MonoBehaviour
     // Variable utilise dans le script
     private Vector2 _vecteurVelocite;
     private Vector2 _directionDeplacement;
+    
+    /// <summary>
+    /// Initialise les composants nécessaires du joueur et s'abonne aux événements d'entrée.
+    /// </summary>
     void Start()
     {
         // Definir les composants de base
@@ -32,13 +36,18 @@ public class Mouvement : MonoBehaviour
         _contacts = new List<ContactPoint2D>();
     }
 
-    // Update is called once per frame
+    /// <summary>
+    // /// Met à jour la vélocité horizontale du joueur à chaque frame selon la direction actuelle.
+    // /// </summary>
     void Update()
     {
         // Deplacement  
         _rigidbody.velocity = new Vector2(_directionDeplacement.x, _rigidbody.velocity.y );
     }   
 
+    /// <summary>
+    /// Permet au joueur de sauter uniquement s'il est en contact avec le sol (vérification par angle de contact).
+    /// </summary>
     void Sauter()
     {
         
@@ -57,19 +66,30 @@ public class Mouvement : MonoBehaviour
         }
     }
     
-    // Update quand un changement ce fait dans la valeur LS_m
+    
+    // /// <summary>
+    // /// Met à jour la direction de déplacement horizontale selon l'entrée du joueur.
+    // /// </summary>
+    // /// <param name="newDirection">Nouvelle direction d'entrée sur l'axe X.</param>
     void Deplacer(Vector2 newDirection)
     {
         _directionDeplacement.x = newDirection.x * VitesseDeplacement;
     }
     
-    // Quand le joueur subit des degats, il est ejecte, font l'animation de mort et les joueurs retourner au checkpoint precedents.
+    /// <summary>
+    /// Applique une force d’éjection au joueur, déclenche une animation de mort et relance le niveau après sauvegarde.
+    /// </summary>
+    /// <param name="directionEjectionVector2">Vecteur représentant la direction de l'éjection.</param>
     public void SubirDegats(Vector2 directionEjectionVector2)
     {
         _rigidbody.AddForce(directionEjectionVector2);
         Debug.Log("Recommencer la partie");
         FinirNiveau(); // Fonction pour sauvegarder 
     }
+    
+    /// <summary>
+    /// Sauvegarde l'état du niveau et prépare le redémarrage de la scène.
+    /// </summary>
     private void FinirNiveau()
     {
         Debug.Log("FinirNiveau");
@@ -84,6 +104,10 @@ public class Mouvement : MonoBehaviour
         StartCoroutine(RelancerLaScene()); // Relancer la scene (fonction au cas ou on ajoute autre chose)
     }
 
+    /// <summary>
+    /// Attend un court délai avant de recharger la scène actuelle.
+    /// </summary>
+    /// <returns>Coroutine IEnumerator pour effectuer le délai avant relancement.</returns>
     private IEnumerator RelancerLaScene()
     {
         yield return new WaitForSeconds(2f);

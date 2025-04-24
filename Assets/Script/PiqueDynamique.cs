@@ -4,13 +4,20 @@ using UnityEngine;
 
 public class PiqueDynamique : PiqueStatique
 {
+    // composants nécessaires pour le script défini automatiquement
     private SpriteRenderer _spriteRenderer;
     private Animator _animator;
+    
+    
     private bool _activated;
     private float _t;
     // a changer dans unity afin d'avoir le resultat souaite.
     public float distance;
     public float temps;
+    
+    /// <summary>
+    /// Initialise les composants nécessaires pour l’animation et les collisions du pique dynamique.
+    /// </summary>
     void Start()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -18,17 +25,28 @@ public class PiqueDynamique : PiqueStatique
         _collider =  GetComponent<Collider2D>();
     }
     
+    
+    /// <summary>
+    /// Appelé à chaque frame, déclenche le comportement animé du pique si activé.
+    /// </summary>
     void Update()
     {
         Animer();
     }
 
+    
+    /// <summary>
+    /// Lance la coroutine qui déclenche l'animation et l'activation du pique dynamique.
+    /// </summary>
     public void Activate()
     {
         StartCoroutine(Coroutine());
     }
     
-    // Activer le debut de l'animation et deplacement du pique dynamique.
+    /// <summary>
+    // /// Coroutine qui démarre l'animation du pique, puis active son comportement après que l'animation de changement de couleur sois fini soit fini.
+    // /// </summary>
+    // /// <returns>Coroutine IEnumerator pour gérer l'attente avant l'activation.</returns>
     IEnumerator Coroutine()
     {
         _animator.SetTrigger("Activate");
@@ -36,6 +54,11 @@ public class PiqueDynamique : PiqueStatique
         _activated =  true;
     }
 
+    
+    /// <summary>
+    /// Gère l'animation du pique en modifiant dynamiquement sa taille selon une fonction quadratique.
+    /// Réinitialise après le temps défini.
+    /// </summary>
     void Animer()
     {
         if (_activated)
