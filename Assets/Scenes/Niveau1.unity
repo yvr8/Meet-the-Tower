@@ -17181,52 +17181,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8608366200856292727, guid: d7d1972c2262eb26389728da6daff9c8, type: 3}
   m_PrefabInstance: {fileID: 1716632454}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1729996242
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1729996244}
-  - component: {fileID: 1729996243}
-  m_Layer: 0
-  m_Name: TestFinNiveau
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1729996243
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1729996242}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da0ebf9ec49c9524a888f1e73fd299e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  btnRetourMenu: {fileID: 894441897}
-  tagEtoile: Etoile
---- !u!4 &1729996244
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1729996242}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 92.964745, y: 449.35205, z: -4.0733314}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1799473431
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18517,7 +18471,6 @@ SceneRoots:
   - {fileID: 440786383}
   - {fileID: 2018821663}
   - {fileID: 1395971783}
-  - {fileID: 1729996244}
   - {fileID: 1470556291}
   - {fileID: 2091038465}
   - {fileID: 954748245}

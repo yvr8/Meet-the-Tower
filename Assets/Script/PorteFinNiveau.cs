@@ -14,14 +14,11 @@ public class PorteFinNiveau : MonoBehaviour
         chronoManager = FindObjectOfType<ChronoManager>();
         if (chronoManager == null)
         {
-            Debug.LogWarning("ChronoManager non trouvé dans la scène !");
         }
     }
 
     void FinirNiveau()
     {
-        Debug.Log("FinirNiveau");
-
         float tempsActuel = chronoManager != null ? chronoManager.GetTime() : 0f;
         bool toutesEtoilesRecupereesMaintenant = VerifierToutesLesEtoilesRecuperees();
         string nomNiveau = SceneManager.GetActiveScene().name;
@@ -82,7 +79,6 @@ public class PorteFinNiveau : MonoBehaviour
         if (!niveauTermine && joueursPrésents >= joueursRequis)
         {
             niveauTermine = true;
-            Debug.Log("Les deux joueurs sont à la porte, fin du niveau !");
             FinirNiveau();
         }
     }
