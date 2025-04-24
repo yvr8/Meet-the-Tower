@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7692212634946788337}
   - component: {fileID: 88204619549347024}
   - component: {fileID: 4339140868829504517}
+  - component: {fileID: 144513261646710103}
   - component: {fileID: 3452556072900708181}
   - component: {fileID: 3865806803864884787}
   - component: {fileID: 154715866839921084}
@@ -78,7 +79,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 5535849f370e4036da1c172913b8df13, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -102,7 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a728b7a80351e49cfa6fb0d5f18d6540, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MagnitudeSaut: 93.03
+  MagnitudeSaut: 0
   VitesseDeplacement: 8
 --- !u!114 &88204619549347024
 MonoBehaviour:
@@ -146,6 +147,18 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &144513261646710103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7041532584580070886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b70674dbf3040040a16230ff9c47d58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &3452556072900708181
 Rigidbody2D:
   serializedVersion: 4
