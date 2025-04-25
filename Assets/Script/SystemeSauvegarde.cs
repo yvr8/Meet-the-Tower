@@ -15,7 +15,6 @@ public class SystemeSauvegarde : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-            Debug.Log("Instance de SystemeSauvegarde initialisée");
             Charger();
         }
         else
@@ -28,7 +27,6 @@ public class SystemeSauvegarde : MonoBehaviour
     {
         string json = JsonUtility.ToJson(sauvegarde, true);
         File.WriteAllText(chemin, json);
-        Debug.Log("Sauvegarde effectuée : " + json);
     }
 
     public void Charger()
@@ -37,21 +35,16 @@ public class SystemeSauvegarde : MonoBehaviour
         {
             string json = File.ReadAllText(chemin);
             sauvegarde = JsonUtility.FromJson<SauvegardeJeu>(json);
-            Debug.Log("Données chargées : " + json);  // Affiche les données lues
         }
         else
         {
             sauvegarde = new SauvegardeJeu();
-            Debug.Log("Aucune donnée trouvée, nouvelle sauvegarde créée.");
         }
     }
 
 
     public void MettreAJourNiveau(string nomScene, bool termine, bool pieces, float temps)
     {
-        Debug.Log("Mise à jour des données pour : " + nomScene);
-        Debug.Log("Terminé : " + termine + ", Toutes les pièces : " + pieces + ", Temps : " + temps);
-
         if (!sauvegarde.niveaux.ContainsKey(nomScene))
             sauvegarde.niveaux[nomScene] = new DonneesNiveau();
 

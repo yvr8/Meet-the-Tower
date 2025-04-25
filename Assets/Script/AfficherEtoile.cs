@@ -34,23 +34,23 @@ public class AfficherEtoile : MonoBehaviour
         var dataNiveau2 = SystemeSauvegarde.Instance.GetNiveau("Niveau2");
         if (dataNiveau2 != null)
         {
-            if (dataNiveau2.niveauTermine) {N1Etoile1.color = new Color(1, 1, 1, 1);}
-            if (dataNiveau2.toutesPiecesRecuperees) {N1Etoile2.color = new Color(1, 1, 1, 1);}
-            if (dataNiveau2.tempsUtilise<=60) {N1Etoile3.color = new Color(1, 1, 1, 1);}
+            if (dataNiveau2.niveauTermine) {N2Etoile2.color = new Color(1, 1, 1, 1);}
+            if (dataNiveau2.toutesPiecesRecuperees) {N2Etoile3.color = new Color(1, 1, 1, 1);}
+            if (dataNiveau2.tempsUtilise<=60) {N2Etoile3.color = new Color(1, 1, 1, 1);}
         }
         var dataNiveau3 = SystemeSauvegarde.Instance.GetNiveau("Niveau3");
         if (dataNiveau3 != null)
         {
-            if (dataNiveau3.niveauTermine) {N1Etoile1.color = new Color(1, 1, 1, 1);}
-            if (dataNiveau3.toutesPiecesRecuperees) {N1Etoile2.color = new Color(1, 1, 1, 1);}
-            if (dataNiveau3.tempsUtilise<=60) {N1Etoile3.color = new Color(1, 1, 1, 1);}
+            if (dataNiveau3.niveauTermine) {N3Etoile1.color = new Color(1, 1, 1, 1);}
+            if (dataNiveau3.toutesPiecesRecuperees) {N3Etoile2.color = new Color(1, 1, 1, 1);}
+            if (dataNiveau3.tempsUtilise<=60) {N3Etoile3.color = new Color(1, 1, 1, 1);}
         }
         var dataNiveau4 = SystemeSauvegarde.Instance.GetNiveau("Niveau4");
         if (dataNiveau4 != null)
         {
-            if (dataNiveau4.niveauTermine) {N1Etoile1.color = new Color(1, 1, 1, 1);}
-            if (dataNiveau4.toutesPiecesRecuperees) {N1Etoile2.color = new Color(1, 1, 1, 1);}
-            if (dataNiveau4.tempsUtilise<=60) {N1Etoile3.color = new Color(1, 1, 1, 1);}
+            if (dataNiveau4.niveauTermine) {N4Etoile1.color = new Color(1, 1, 1, 1);}
+            if (dataNiveau4.toutesPiecesRecuperees) {N4Etoile2.color = new Color(1, 1, 1, 1);}
+            if (dataNiveau4.tempsUtilise<=60) {N4Etoile3.color = new Color(1, 1, 1, 1);}
         }
     }
 }
