@@ -27,6 +27,7 @@ public class ControllerPiques : MonoBehaviour
         Right,
         Left,
         Vague,
+        VagueReverse,
         Split11,
         Split22,
         Split33,
@@ -71,7 +72,10 @@ public class ControllerPiques : MonoBehaviour
                 Side(true);
                 break;
             case enumStatePique.Vague:
-                StartCoroutine(Vague());
+                StartCoroutine(Vague(false));
+                break;
+            case enumStatePique.VagueReverse:
+                StartCoroutine(Vague(true));
                 break;
             case enumStatePique.Split11:
                 Split(1, 1, false);
@@ -139,12 +143,23 @@ public class ControllerPiques : MonoBehaviour
     /// Active les piques un par un en suivant une séquence avec un délai entre chaque activation.
     /// </summary>
     /// <returns>Coroutine IEnumerator pour permettre le délai entre les activations.</returns>
-    private IEnumerator Vague()
+    private IEnumerator Vague(bool reverse = false)
     {
-        foreach (PiqueDynamique pique in listePique)
+        if (reverse)
         {
-            pique.Activate();
-            yield return new WaitForSeconds(delayVague);
+            foreach (PiqueDynamique pique in listePique.Reverse())
+            {
+                pique.Activate();
+                yield return new WaitForSeconds(delayVague);
+            }
+        }
+        else
+        {
+            foreach (PiqueDynamique pique in listePique)
+            {
+                pique.Activate();
+                yield return new WaitForSeconds(delayVague);
+            }
         }
     }
 
