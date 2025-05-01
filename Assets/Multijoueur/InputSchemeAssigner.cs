@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.InputSystem;
 
@@ -6,6 +7,10 @@ using UnityEngine.InputSystem;
 public class InputSchemeAssigner : MonoBehaviour 
 {
     // Attention, ce système ne peut pas gérer plus de 2 joueurs sur le même clavier.
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
 
     private void Start()
     {
