@@ -17,6 +17,13 @@ public class BouttonController : MonoBehaviour
             }
             triggered = false;
         }
+        else
+        {
+            foreach (GameObject obj in objects)
+            {
+                obj.SetActive(!reverse);
+            }
+        }
     }
     /// <summary>
     /// Désactive tous les objets de la liste lorsque le joueur entre dans la zone de déclenchement.
