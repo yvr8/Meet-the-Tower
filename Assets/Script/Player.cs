@@ -68,9 +68,12 @@ public class Player : MonoBehaviour
     /// </summary>
     void Sauter()
     {
-        
+        if (!_collider2D)
+        {
+            return;
+        }
         _collider2D.GetContacts(_contacts);
-
+        
         foreach (ContactPoint2D contact in _contacts)
         {
             float angleVersBas = Vector2.Angle(contact.normal, Vector2.up);
