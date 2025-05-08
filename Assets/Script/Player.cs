@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Mouvement : MonoBehaviour
+public class Player : MonoBehaviour
 {
     // Composant principale du joueur
     private PlayerInputReader _inputReader;

@@ -24,7 +24,7 @@ public class PiqueStatique : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Mouvement scriptJoueur = collision.gameObject.GetComponent<Mouvement>();
+            Player scriptJoueur = collision.gameObject.GetComponent<Player>();
             scriptJoueur.SubirDegats(new Vector2(Random.Range(-1000, 1000), 2000 ));
         }
     }
