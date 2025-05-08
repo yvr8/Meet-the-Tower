@@ -45,4 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   btnRetourParametre: {fileID: 0}
+  btnQuitter: {fileID: 0}
   MenuParametre: {fileID: 0}

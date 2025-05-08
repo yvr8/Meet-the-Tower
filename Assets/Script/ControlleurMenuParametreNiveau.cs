@@ -29,6 +29,7 @@ public class ControlleurMenuParametreNiveau : MonoBehaviour
     }
     void btnRetourParametre_onClick()
     {
+        Time.timeScale = 1f;
         MenuParametre.SetActive(false);
     }
 }

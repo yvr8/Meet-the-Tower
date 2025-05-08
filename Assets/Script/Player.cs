@@ -53,8 +53,15 @@ public class Player : MonoBehaviour
     }   
     void Menu()
     {
+        
         isMenuTrigger = !isMenuTrigger;
         menu.SetActive(isMenuTrigger);
+        if (isMenuTrigger){
+            Time.timeScale = 0f;
+        }
+        else{
+            Time.timeScale = 1f;
+        }
     }
     /// <summary>
     /// Permet au joueur de sauter uniquement s'il est en contact avec le sol (vérification par angle de contact).
