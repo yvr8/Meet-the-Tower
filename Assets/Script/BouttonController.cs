@@ -7,7 +7,14 @@ public class BouttonController : MonoBehaviour
     public List<GameObject> objects;
     public bool reverse;
     public bool enableOnExit = true;
-    
+
+    private void Start()
+    {
+        foreach (GameObject obj in objects)
+        {
+            obj.SetActive(reverse);
+        }
+    }
     private void OnTriggerStay2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("Player"))
