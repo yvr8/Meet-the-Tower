@@ -16,7 +16,9 @@ public class Player : MonoBehaviour
     // Variable utilise dans le script
     private Vector2 _vecteurVelocite;
     private Vector2 _directionDeplacement;
-    
+    // Le menu de parametre
+    public GameObject menu;
+    public bool isMenuTrigger = false;
     /// <summary>
     /// Initialise les composants nécessaires du joueur et s'abonne aux événements d'entrée.
     /// </summary>
@@ -30,10 +32,15 @@ public class Player : MonoBehaviour
         // S'abonner à l'événement sauter
         _inputReader.BS.callback += Sauter;
         _inputReader.LS_m.callback += Deplacer;
-        
+        _inputReader.Menu.callback += Menu;
         // Initialiser les valeurs par default
         _directionDeplacement = Vector2.zero;
         _contacts = new List<ContactPoint2D>();
+
+        // Trouver le Menu
+        menu = GameObject.FindWithTag("MenuParametre");
+        menu.SetActive(false);
+
     }
 
     /// <summary>
@@ -44,7 +51,11 @@ public class Player : MonoBehaviour
         // Deplacement  
         _rigidbody.velocity = new Vector2(_directionDeplacement.x, _rigidbody.velocity.y );
     }   
-
+    void Menu()
+    {
+        isMenuTrigger = !isMenuTrigger;
+        menu.SetActive(isMenuTrigger);
+    }
     /// <summary>
     /// Permet au joueur de sauter uniquement s'il est en contact avec le sol (vérification par angle de contact).
     /// </summary>

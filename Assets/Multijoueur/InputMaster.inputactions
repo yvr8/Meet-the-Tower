@@ -509,18 +509,7 @@
                     "path": "<Keyboard>/p",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard Left",
-                    "action": "Menu",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "070eb3fb-3051-4e33-91ed-0b949154c95a",
-                    "path": "<Keyboard>/p",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard Right",
+                    "groups": "Keyboard Left;Keyboard Right",
                     "action": "Menu",
                     "isComposite": false,
                     "isPartOfComposite": false

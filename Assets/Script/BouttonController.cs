@@ -6,18 +6,18 @@ public class BouttonController : MonoBehaviour
     // objets à désactiver / activer
     public List<GameObject> objects;
     public bool reverse;
-    public bool enableOnExit = true;
-
-    private void Start()
+    private bool triggered = false;
+    private void Update()
     {
-        foreach (GameObject obj in objects)
+        if (triggered)
         {
-            obj.SetActive(reverse);
+            foreach (GameObject obj in objects)
+            {
+                obj.SetActive(reverse);
+            }
+            triggered = false;
         }
-    }
-    private void OnTriggerStay2D(Collider2D col)
-    {
-        if (col.gameObject.CompareTag("Player"))
+        else
         {
             foreach (GameObject obj in objects)
             {
@@ -25,15 +25,15 @@ public class BouttonController : MonoBehaviour
             }
         }
     }
-
-    private void OnTriggerExit2D(Collider2D col)
+    /// <summary>
+    /// Désactive tous les objets de la liste lorsque le joueur entre dans la zone de déclenchement.
+    /// </summary>
+    /// <param name="col">Le collider de l'objet entrant dans la zone de déclenchement.</param>
+    private void OnTriggerStay2D(Collider2D col)
     {
-        if (col.gameObject.CompareTag("Player") && enableOnExit)
+        if (col.gameObject.CompareTag("Player"))
         {
-            foreach (GameObject obj in objects)
-            {
-                obj.SetActive(reverse);
-            }
+            triggered = true;
         }
     }
 }
