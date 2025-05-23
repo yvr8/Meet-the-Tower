@@ -22,7 +22,6 @@ public class UI : MonoBehaviour
     public Button btnNiveau2;
     public Button btnNiveau3;
     public Button btnNiveau4;
-    static bool personnageEstGenerer = false;
     void Start()
     {
         //Menu de base
@@ -40,11 +39,6 @@ public class UI : MonoBehaviour
         btnNiveau2.onClick.AddListener(btnNiveau2_onClick);
         btnNiveau3.onClick.AddListener(btnNiveau3_onClick);
         btnNiveau4.onClick.AddListener(btnNiveau4_onClick);
-        if (!personnageEstGenerer)
-        {
-            personnageEstGenerer = true;
-            SceneManager.LoadScene(sceneName: "Personnage", LoadSceneMode.Additive);
-        }
         
     }
     void btnJouer_onClick()
@@ -66,11 +60,9 @@ public class UI : MonoBehaviour
     {
         MenuParametre.SetActive(true);
         Menu.SetActive(false);
-        Debug.Log("Paramtre!");
     }
     void btnQuitter_onClick()
     {
-        Debug.Log("Quitter!");
         Application.Quit();
     }
 

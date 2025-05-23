@@ -120,7 +120,6 @@ public class Player : MonoBehaviour
 
     private IEnumerator SequenceMortComplete()
     {
-        Debug.Log("Flashtime = " + flashtime);
         // Lancer le flash
         yield return StartCoroutine(FlashRouge());
 
@@ -138,7 +137,6 @@ public class Player : MonoBehaviour
         while (t < duration / 2f)
         {
             t += Time.unscaledDeltaTime;
-            Debug.Log(t);
             float alpha = Mathf.Lerp(0f, 0.5f, t / (duration / 2f));
             flashRouge.color = new Color(1f, 0f, 0f, alpha);
             yield return null;
@@ -149,7 +147,6 @@ public class Player : MonoBehaviour
         while (t < duration / 2f)
         {
             t += Time.unscaledDeltaTime;
-            Debug.Log(t);
             float alpha = Mathf.Lerp(0.5f, 0f, t / (duration / 2f));
             flashRouge.color = new Color(1f, 0f, 0f, alpha);
             yield return null;
