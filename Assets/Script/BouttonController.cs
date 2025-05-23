@@ -21,7 +21,10 @@ public class BouttonController : MonoBehaviour
         {
             foreach (GameObject obj in objects)
             {
-                obj.SetActive(!reverse);
+                if (obj != null)
+                {
+                    obj.SetActive(!reverse);
+                }
             }
         }
     }
@@ -32,7 +35,10 @@ public class BouttonController : MonoBehaviour
         {
             foreach (GameObject obj in objects)
             {
-                obj.SetActive(reverse);
+                if (obj != null)
+                {
+                    obj.SetActive(reverse);
+                }
             }
         }
     }

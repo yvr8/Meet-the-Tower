@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -18,12 +19,16 @@ public class Player : MonoBehaviour
     private Vector2 _directionDeplacement;
     // Le menu de parametre
     public GameObject menu;
-    public bool isMenuTrigger = false;
+    private bool isMenuTrigger = false;
+    // Effet a la mort
+    public Image flashRouge;
+    private float flashtime = 2f;
     /// <summary>
     /// Initialise les composants nécessaires du joueur et s'abonne aux événements d'entrée.
     /// </summary>
     void Start()
     {
+        Time.timeScale = 1f;
         // Definir les composants de base
         _collider2D = GetComponent<Collider2D>();
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -36,9 +41,6 @@ public class Player : MonoBehaviour
         // Initialiser les valeurs par default
         _directionDeplacement = Vector2.zero;
         _contacts = new List<ContactPoint2D>();
-
-        // Trouver le Menu
-        menu = GameObject.FindWithTag("MenuParametre");
         menu.SetActive(false);
 
     }
@@ -107,31 +109,53 @@ public class Player : MonoBehaviour
         Debug.Log("Recommencer la partie");
         FinirNiveau(); // Fonction pour sauvegarder 
     }
-    
+
     /// <summary>
     /// Sauvegarde l'état du niveau et prépare le redémarrage de la scène.
     /// </summary>
     private void FinirNiveau()
     {
-        Debug.Log("FinirNiveau");
-        string nomNiveau = SceneManager.GetActiveScene().name;
-
-        SystemeSauvegarde.Instance.MettreAJourNiveau(
-            nomNiveau,
-            true,
-            false,
-            22f
-        );
-        StartCoroutine(RelancerLaScene()); // Relancer la scene (fonction au cas ou on ajoute autre chose)
+        StartCoroutine(SequenceMortComplete());
     }
 
-    /// <summary>
-    /// Attend un court délai avant de recharger la scène actuelle.
-    /// </summary>
-    /// <returns>Coroutine IEnumerator pour effectuer le délai avant relancement.</returns>
-    private IEnumerator RelancerLaScene()
+    private IEnumerator SequenceMortComplete()
     {
-        yield return new WaitForSeconds(2f);
+        Debug.Log("Flashtime = " + flashtime);
+        // Lancer le flash
+        yield return StartCoroutine(FlashRouge());
+
+        // Recharger la scène
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    private IEnumerator FlashRouge()
+    {
+        Time.timeScale = 0f;
+        float duration = flashtime;
+        float t = 0f;
+
+        while (t < duration / 2f)
+        {
+            t += Time.unscaledDeltaTime;
+            Debug.Log(t);
+            float alpha = Mathf.Lerp(0f, 0.5f, t / (duration / 2f));
+            flashRouge.color = new Color(1f, 0f, 0f, alpha);
+            yield return null;
+        }
+
+        t = 0f;
+
+        while (t < duration / 2f)
+        {
+            t += Time.unscaledDeltaTime;
+            Debug.Log(t);
+            float alpha = Mathf.Lerp(0.5f, 0f, t / (duration / 2f));
+            flashRouge.color = new Color(1f, 0f, 0f, alpha);
+            yield return null;
+        }
+
+        flashRouge.color = new Color(1f, 0f, 0f, 0f);
+        
     }
 }
