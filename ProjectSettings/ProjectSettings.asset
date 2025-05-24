@@ -282,7 +282,14 @@ PlayerSettings:
   AndroidMinifyDebug: 0
   AndroidValidateAppBundleSize: 1
   AndroidAppBundleSizeToValidate: 150
-  m_BuildTargetIcons: []
+  m_BuildTargetIcons:
+  - m_BuildTarget: 
+    m_Icons:
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: b44627b3fef1c7042b693324f4c70cff, type: 3}
+      m_Width: 128
+      m_Height: 128
+      m_Kind: 0
   m_BuildTargetPlatformIcons:
   - m_BuildTarget: VisionOS
     m_Icons:
@@ -828,8 +835,8 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Meet-the-Tower init
-  metroPackageVersion: 
+  metroPackageName: Meet-the-Towerinit
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -837,7 +844,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: Meet-the-Tower init
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: Meet-the-Tower
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
