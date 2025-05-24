@@ -49,7 +49,7 @@ public class DeplacementCamera : MonoBehaviour
         positionMoyenne /= _joueurs.Length;
 
         transform.position = Vector2.SmoothDamp(transform.position, positionMoyenne, ref _velociteActuel, ammortissement);
-        transform.position = new Vector3(transform.position.x, transform.position.y, -10f); // Garder un Z fixe
+        transform.position = new Vector3(transform.position.x, transform.position.y, -10f);
 
         Vector2 pos1 = _joueurs[0].transform.position;
         Vector2 pos2 = _joueurs[1].transform.position;
@@ -57,7 +57,7 @@ public class DeplacementCamera : MonoBehaviour
         float distanceX = Mathf.Abs(pos1.x - pos2.x) / _camera.aspect; // Adapter au ratio largeur/hauteur
         float distanceY = Mathf.Abs(pos1.y - pos2.y);
 
-        float marge = 2f;
+        float marge = 10f;
 
         _camera.orthographicSize = Mathf.Max(10f, (Mathf.Max(distanceX, distanceY) / 2f) + marge);
     }
