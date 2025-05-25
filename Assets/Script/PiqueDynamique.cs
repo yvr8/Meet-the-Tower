@@ -8,12 +8,16 @@ public class PiqueDynamique : PiqueStatique
     private SpriteRenderer _spriteRenderer;
     private Animator _animator;
     
+    AudioSource source;
+    [SerializeField] AudioClip clipMetal;
     
     private bool _activated;
     private float _t;
     // a changer dans unity afin d'avoir le resultat souaite.
     public float distance;
     public float temps;
+
+    public bool sfxActive = true;
     
     /// <summary>
     /// Initialise les composants nécessaires pour l’animation et les collisions du pique dynamique.
@@ -23,6 +27,7 @@ public class PiqueDynamique : PiqueStatique
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _animator = GetComponent<Animator>();
         _collider =  GetComponent<Collider2D>();
+        source = GetComponent<AudioSource>();
     }
     
     
@@ -54,6 +59,9 @@ public class PiqueDynamique : PiqueStatique
         _activated =  true;
     }
 
+    // À chaque x mètre, un son jouera
+    private const float distanceToSound = 2.0f;
+    private float lastDistanceToSound = 0f;
     
     /// <summary>
     /// Gère l'animation du pique en modifiant dynamiquement sa taille selon une fonction quadratique.
@@ -64,8 +72,18 @@ public class PiqueDynamique : PiqueStatique
         if (_activated)
         {
             _t += Time.deltaTime;
-            _spriteRenderer.size = new Vector2(-4f * distance / (temps * temps) * _t * (_t - temps) + 2f, 1f);
 
+            float tailleX = -4f * distance / (temps * temps) * _t * (_t - temps) + 2f;
+            
+            _spriteRenderer.size = new Vector2(tailleX, 1f);
+
+            // Effet sonore? (selon la distance parcourue)
+            if (sfxActive && (tailleX > lastDistanceToSound + distanceToSound || tailleX < lastDistanceToSound - distanceToSound))
+            {
+                source.PlayOneShot(clipMetal, 0.75f);
+                lastDistanceToSound = tailleX;
+            }
+            
             if (_t >= temps)
             {
                 _t = 0;

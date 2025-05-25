@@ -5,6 +5,7 @@ using UnityEngine.Tilemaps;
 
 public class PiqueStatique : MonoBehaviour
 {
+    
     protected Collider2D _collider; 
     
     /// <summary>

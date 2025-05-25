@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,8 @@ public class Player : MonoBehaviour
     private Rigidbody2D _rigidbody;
     private Collider2D _collider2D;
     private List<ContactPoint2D> _contacts;
+    AudioSource source;
+    
     // Variable modifiable pour changer le comportement du personnage
     public float MagnitudeSaut;
     public float VitesseDeplacement;
@@ -23,6 +26,11 @@ public class Player : MonoBehaviour
     // Effet a la mort
     public Image flashRouge;
     private float flashtime = 2f;
+    
+    [SerializeField] AudioClip clipSaut;
+    [SerializeField] AudioClip clipAterissage;
+    [SerializeField] AudioClip clipMort;
+    
     /// <summary>
     /// Initialise les composants nécessaires du joueur et s'abonne aux événements d'entrée.
     /// </summary>
@@ -33,6 +41,7 @@ public class Player : MonoBehaviour
         _collider2D = GetComponent<Collider2D>();
         _rigidbody = GetComponent<Rigidbody2D>();
         _inputReader = GetComponent<PlayerInputReader>();
+        source = GetComponent<AudioSource>();
         
         // S'abonner à l'événement sauter
         _inputReader.BS.callback += Sauter;
@@ -70,6 +79,9 @@ public class Player : MonoBehaviour
     /// </summary>
     void Sauter()
     {
+        if (MagnitudeSaut < 0.1f)
+            return;
+        
         if (!_collider2D)
         {
             return;
@@ -84,6 +96,9 @@ public class Player : MonoBehaviour
             {
                 _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, 0);
                 _rigidbody.AddForce(Vector2.up * MagnitudeSaut, ForceMode2D.Impulse);
+                
+                // Audio
+                source.PlayOneShot(clipSaut);
                 break;
             }
         }
@@ -108,6 +123,25 @@ public class Player : MonoBehaviour
         _rigidbody.AddForce(directionEjectionVector2);
         Debug.Log("Recommencer la partie");
         FinirNiveau(); // Fonction pour sauvegarder 
+        
+        // audio mort
+        source.PlayOneShot(clipMort);
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        // Récupérer la force de l'impact (10-20)
+        float forceImpact = other.relativeVelocity.magnitude;
+
+        // Aucun son si l'impact est minime
+        if (forceImpact < 5)
+            return;
+        
+        // Calculer la force du volume
+        float volume = Utilites.remapper(forceImpact, 10f, 20f, 0.25f, 1f);
+        
+        // Jouer l'effet sonore au volume correspondant à l'impact
+        source.PlayOneShot(clipAterissage, volume);
     }
 
     /// <summary>

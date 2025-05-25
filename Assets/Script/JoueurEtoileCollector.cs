@@ -6,6 +6,9 @@ public class JoueurEtoileCollector : MonoBehaviour
 {
     // Gestionnaire des étoiles
     private EtoileManager etoileManager;
+    AudioSource source;
+    
+    [SerializeField] AudioClip clipEtoile;
 
     /// <summary>
     /// Récupère une référence au script EtoileManager au démarrage du jeu.
@@ -13,6 +16,7 @@ public class JoueurEtoileCollector : MonoBehaviour
     void Start()
     {
         etoileManager = FindObjectOfType<EtoileManager>();
+        source = GetComponent<AudioSource>();
     }
 
     /// <summary>
@@ -26,6 +30,9 @@ public class JoueurEtoileCollector : MonoBehaviour
         {
             etoileManager.AddStar();
             Destroy(other.gameObject);
+            
+            // Audio
+            source.PlayOneShot(clipEtoile);
         }
     }
 }
